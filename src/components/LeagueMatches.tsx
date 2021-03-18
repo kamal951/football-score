@@ -25,20 +25,21 @@ export const LeagueMatches = (props: Props) => {
 	useEffect(() => {
 		setIsLoading(true)
 		getListMatches(props.league).then((response) => {
-			let past = []
-			let today = []
-			let scheduled = []
+			const past = []
+			const today = []
+			const scheduled = []
+			const myDateFormat = "DD-MM-YYYY"
 
 			for (var i = 0; i < response.data.matches.length; i++) {
-				if ((response.data.matches[i].status === "FINISHED" || response.data.matches[i].status === "AWARDED") &&  moment(response.data.matches[i].utcDate).format("DD-MM-YYYY") !== moment().format("DD-MM-YYYY")) {
+				if ((response.data.matches[i].status === "FINISHED" || response.data.matches[i].status === "AWARDED") &&  moment(response.data.matches[i].utcDate).format(myDateFormat) !== moment().format(myDateFormat)) {
 					past.push(response.data.matches[i])
-				} else if (moment(response.data.matches[i].utcDate).format("DD-MM-YYYY") === moment().format("DD-MM-YYYY")) {
+				} else if (moment(response.data.matches[i].utcDate).format(myDateFormat) === moment().format(myDateFormat)) {
 					today.push(response.data.matches[i])
 				} else {
 					scheduled.push(response.data.matches[i])
 				}
 			}
-			let data = [today, scheduled, past.reverse()]
+			const data = [today, scheduled, past.reverse()]
 
 			setMatchesList(data)
 			setIsLoading(false)
@@ -47,7 +48,7 @@ export const LeagueMatches = (props: Props) => {
 
 
 	const displayMatchesAsList = (matches: any[]) => {
-		let rows = []
+		const rows = []
 		if (matches !== undefined) {
 			if (matches.length !== 0) {
 				for (let i = 0; i < matches.length; i++) {

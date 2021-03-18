@@ -1,24 +1,8 @@
-import { Chip } from '@material-ui/core';
 import React from 'react';
-import styled from 'styled-components'
 
 export interface Props {
     forme: string
 }
-
-const WinChip = styled(Chip)`
-    background-color: '#19C80A';
-    color: "white";
-    border-radius: "10px";
-`
-
-const DrawChip = styled(Chip)`
-
-`
-
-const LoseChip = styled(Chip)`
-
-`
 
 export const Forme = (props: Props) => {
     const forme = props.forme.split(',')

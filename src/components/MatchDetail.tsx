@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
 export const MatchDetail: React.FC<TParams> = props => {
 	const classes = useStyles();
 	const [matchDetail, setMatchDetail] = useState(Object);
-	let history = useHistory();
+	const history = useHistory();
 
 	useEffect(() => {
 		getMatchDetail(props.match.params.matchId).then((response) => {

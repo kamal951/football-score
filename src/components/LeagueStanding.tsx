@@ -16,7 +16,7 @@ const useStyles = makeStyles({
 });
 
 const makeRows = (data: Array<any> | undefined) => {
-    let rows = []
+    const rows = []
     if (data !== undefined) {
         for (let i = 0; i < data.length; i++) {
             rows.push(

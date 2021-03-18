@@ -3,7 +3,7 @@ import axios from 'axios'
 type competList = 'PL' | 'BL1' | 'SA' | 'FL1' | 'PD' | 'CL';
 
 export function getListMatches(competition: competList) {
-    let config = {
+    const config = {
         "X-Auth-Token": process.env.REACT_APP_API_TOKEN
     }
     
@@ -11,7 +11,7 @@ export function getListMatches(competition: competList) {
 }
 
 export function getClassement(competition: competList) {
-    let config = {
+    const config = {
         "X-Auth-Token": process.env.REACT_APP_API_TOKEN
     }
     
@@ -19,7 +19,7 @@ export function getClassement(competition: competList) {
 }
 
 export function getMatchDetail(matchId: string) {
-    let config = {
+    const config = {
         "X-Auth-Token": process.env.REACT_APP_API_TOKEN_2
     }
     
@@ -27,7 +27,7 @@ export function getMatchDetail(matchId: string) {
 }
 
 export function getTeamDetail(teamId: number) {
-    let config = {
+    const config = {
         "X-Auth-Token": process.env.REACT_APP_API_TOKEN_2
     }
     
