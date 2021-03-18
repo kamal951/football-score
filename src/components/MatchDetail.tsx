@@ -46,7 +46,6 @@ export const MatchDetail: React.FC<TParams> = props => {
 
 	useEffect(() => {
 		getMatchDetail(props.match.params.matchId).then((response) => {
-			console.log(response.data)
 			setMatchDetail(response.data)
 		})
 	}, [props.match.params.matchId])
