@@ -1,5 +1,3 @@
-
-import classes from '*.module.css'
 import styled from 'styled-components'
 
 interface Props { 
