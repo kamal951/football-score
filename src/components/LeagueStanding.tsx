@@ -69,6 +69,7 @@ const makeRows = (data: any | undefined) => {
     if (data !== undefined) {
         
         const standing = data.standings[0].table
+        console.log(data)
         for (let i = 0; i < standing.length; i++) {
             rows.push(
                 <TableRow key={standing[i].team.id} >
@@ -84,7 +85,7 @@ const makeRows = (data: any | undefined) => {
                     <TableCell style={{ width: '5%' }} align="center">{standing[i].goalsFor}</TableCell>
                     <TableCell style={{ width: '5%' }} align="center">{standing[i].goalsAgainst}</TableCell>
                     <TableCell style={{ width: '5%' }} align="center">{standing[i].goalDifference}</TableCell>
-                    <TableCell style={{ width: '5%' }} align="center"><Forme forme={standing[i].form} /></TableCell>
+                    <TableCell style={{ width: '5%' }} align="center"><Forme forme={standing[i]?.form} /></TableCell>
                 </TableRow>
             )
         }

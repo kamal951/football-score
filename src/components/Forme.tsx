@@ -5,10 +5,10 @@ export interface Props {
 }
 
 export const Forme = (props: Props) => {
-    const forme = props.forme.split(',')
+    const forme = props.forme?.split(',')
     return (
         <div style={{ display: "flex" }}>
-            {forme.map((item) => {
+            {forme ? forme.map((item) => {
                 switch (item) {
                     case "W":
                         return (
@@ -45,7 +45,7 @@ export const Forme = (props: Props) => {
                         )
                 }
 
-            })}
+            }) : 'N/A'}
         </div >
     );
 }
